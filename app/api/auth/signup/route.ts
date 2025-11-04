@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
     await connectDB()
 
     // Check if user already exists
-    const existingUser = await User.findOne({ email })
+    const existingUser = await User.findOne({ email: email.toLowerCase().trim() })
     if (existingUser) {
       return NextResponse.json(
         { error: 'User with this email already exists' },
@@ -39,8 +39,8 @@ export async function POST(request: NextRequest) {
 
     // Create new user
     const user = await User.create({
-      name,
-      email,
+      name: name.trim(),
+      email: email.toLowerCase().trim(),
       password: hashedPassword,
     })
 
