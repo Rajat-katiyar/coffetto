@@ -52,17 +52,37 @@ export default function SignupPage() {
       return
     }
 
-    // Simulate API call
-    setTimeout(() => {
-      // In a real app, you would make an API call here
-      console.log('Signup attempt:', formData)
+    // API call
+    try {
+      const response = await fetch('/api/auth/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          password: formData.password,
+        }),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        setError(data.error || 'Something went wrong')
+        setLoading(false)
+        return
+      }
+
       setSuccess('Account created successfully! Redirecting...')
       // Redirect to login after 2 seconds
       setTimeout(() => {
         router.push('/login')
       }, 2000)
+    } catch (err: any) {
+      setError('Network error. Please try again.')
       setLoading(false)
-    }, 1000)
+    }
   }
 
   return (
