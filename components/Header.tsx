@@ -75,7 +75,7 @@ export default function Header() {
       <div className="header__border"></div>
       <nav className="nav container">
         <Link href="/" className="nav__logo">
-          <img src="/images/logo.png" alt="logo" />
+          <img src="/images/coffee_images.jpeg" alt="Coffetto logo" />
           Coffetto
         </Link>
         <div className="nav__menu">
