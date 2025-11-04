@@ -33,3 +33,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# vite (should not exist in Next.js project)
+vite.config.*
+**/vite-env.d.ts
