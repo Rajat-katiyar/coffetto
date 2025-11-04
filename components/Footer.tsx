@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="footer__data grid">
             <div>
               <a href="#" className="footer__logo">
-                <img src="/images/coffee_images.jpeg" alt="Coffetto logo" />
+                <img src="/images/logo.png" alt="logo" />
                 Coffetto
               </a>
               <h3 className="footer__title">Sign up our newsletter</h3>

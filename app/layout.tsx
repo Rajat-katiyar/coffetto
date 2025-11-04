@@ -5,6 +5,10 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'Coffetto - Coffee Shop',
   description: 'Premium coffee shop website',
+  icons: {
+    icon: '/images/coffee_images.jpeg',
+    apple: '/images/coffee_images.jpeg',
+  },
 }
 
 export default function RootLayout({
